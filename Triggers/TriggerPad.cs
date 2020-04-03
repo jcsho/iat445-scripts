@@ -35,21 +35,19 @@ namespace RollingStones
         // Update is called once per frame
         void Update()
         {
-            //if (transform.position != targetPosition) transform.Translate(targetPosition * Time.deltaTime);
+            
         }
 
         private void OnTriggerEnter(Collider other)
         {
             IsTrigger = true;
-            transform.position = new Vector3(transform.position.x, transform.position.y - CompressAmount, transform.position.z);
-            //targetPosition.y = targetPosition.y - CompressAmount;
+            transform.Translate(new Vector3(0, -CompressAmount), Space.World);
         }
 
         private void OnTriggerExit(Collider other)
         {
             IsTrigger = false;
-            transform.position = new Vector3(transform.position.x, transform.position.y + CompressAmount, transform.position.z);
-            //targetPosition.y = targetPosition.y + CompressAmount;
+            transform.Translate(new Vector3(0, CompressAmount), Space.World);
         }
     }
 }

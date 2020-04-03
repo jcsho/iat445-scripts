@@ -97,7 +97,7 @@ namespace RollingStones
 
                 if (counter == 0)
                 {
-                    transform.Translate(new Vector3(0, releaseMovementPerSec) * Time.deltaTime);
+                    transform.Translate(new Vector3(0, releaseMovementPerSec) * Time.deltaTime, Space.World);
                 }
             }
         }
