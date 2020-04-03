@@ -77,7 +77,7 @@ namespace RollingStones
 
             if (trigger && triggerPosition1 < triggerPosition2)
             {
-                transform.Translate(new Vector3(0, triggerMovementPerSec) * Time.deltaTime);
+                transform.Translate(new Vector3(0, triggerMovementPerSec) * Time.deltaTime, Space.World);
                 counter = ReleaseDelay;
             }
             // delay for a x seconds
