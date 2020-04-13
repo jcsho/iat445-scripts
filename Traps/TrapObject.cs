@@ -6,6 +6,13 @@ public class TrapObject : MonoBehaviour
 {
     private Vector3 projectileDirection;
     private float projectileSpeed = 1f;
+    private float timeAlive = 8;
+
+    private void Start()
+    {
+        //StartCoroutine("DestroyOnTimer");
+        Destroy(gameObject, timeAlive);
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,5 +24,16 @@ public class TrapObject : MonoBehaviour
     {
         projectileSpeed = speed;
         projectileDirection = direction;
+    }
+
+    public void SetDestroyTimer(float amount)
+    {
+        timeAlive = amount;
+    }
+
+    IEnumerator DestroyOnTimer()
+    {
+        yield return new WaitForSeconds(timeAlive);
+        Destroy(this);
     }
 }

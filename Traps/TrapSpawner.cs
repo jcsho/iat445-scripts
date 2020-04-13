@@ -15,6 +15,10 @@ public class TrapSpawner : MonoBehaviour
     [Range(0, 100)]
     public float SpawnDelay = 0.5f;
 
+    [Tooltip("Duration of Object in s")]
+    [Range(0, 100)]
+    public float ObjectLifeSpan = 8;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,7 @@ public class TrapSpawner : MonoBehaviour
         {
             TrapObject ob = Instantiate(SpawnObject, transform.position, transform.rotation);
             ob.SetVelocity(ProjectileSpeed, transform.forward);
+            ob.SetDestroyTimer(ObjectLifeSpan);
 
             // Debug.Log("Spawned object");
 
