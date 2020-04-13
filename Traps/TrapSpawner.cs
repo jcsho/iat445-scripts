@@ -18,14 +18,15 @@ public class TrapSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SpawnObject != null)
-        {
-            StartCoroutine("SpawnObjects");
-        }
+        // Uncomment this to use independently of Trigger Area
+        //if (SpawnObject != null)
+        //{
+        //    StartCoroutine("SpawnObjects");
+        //}
         //Debug.Log("Direction: " + transform.forward);
     }
 
-    IEnumerator SpawnObjects()
+    public IEnumerator SpawnObjects()
     {
         for (;;)
         {
